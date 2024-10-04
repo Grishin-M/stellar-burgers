@@ -1,11 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { TOrder, TIngredient } from '@utils-types';
+import { TOrder } from '@utils-types';
 import { RootState } from 'src/services/store';
 import { getFeeds, getOrderByNumber } from './async';
 
 export interface IFeedState {
   order: TOrder | null;
-  ingredients: TIngredient[];
   orders: TOrder[];
   total: number;
   totalToday: number;
@@ -15,7 +14,6 @@ export interface IFeedState {
 
 export const initialState: IFeedState = {
   order: null,
-  ingredients: [],
   orders: [],
   total: 0,
   totalToday: 0,

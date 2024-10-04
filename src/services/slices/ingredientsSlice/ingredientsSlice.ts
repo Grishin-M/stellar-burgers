@@ -12,7 +12,7 @@ export interface TIngredientsState {
   loading: boolean;
 }
 
-const initialState: TIngredientsState = {
+export const initialState: TIngredientsState = {
   ingredients: [],
   buns: [],
   mains: [],

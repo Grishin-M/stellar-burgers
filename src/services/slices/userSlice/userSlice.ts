@@ -48,7 +48,10 @@ export const userSlice = createSlice({
       .addCase(registerUser.rejected, (state, action) => {
         state.error = action.error.message;
         state.isAuth = false;
-        state.user = null;
+        state.user = {
+          email: '',
+          name: ''
+        };
       })
       .addCase(loginUser.pending, (state) => {
         state.error = null;
@@ -62,17 +65,23 @@ export const userSlice = createSlice({
         localStorage.setItem('refreshToken', action.payload.refreshToken);
       })
       .addCase(loginUser.rejected, (state, action) => {
-        state.error = action.error.message; //
+        state.error = action.error.message;
         state.isAuth = false;
-        state.user = null;
+        state.user = {
+          email: '',
+          name: ''
+        };
       })
       .addCase(logoutUser.pending, (state) => {
         state.error = null;
       })
       .addCase(logoutUser.fulfilled, (state) => {
         state.error = null;
-        state.user = null;
-        state.isAuth = true;
+        state.user = {
+          email: '',
+          name: ''
+        };
+        state.isAuth = false;
         deleteCookie('accessToken');
         localStorage.removeItem('refreshToken');
       })
@@ -81,7 +90,7 @@ export const userSlice = createSlice({
       })
       .addCase(getUser.pending, (state) => {
         state.error = null;
-        state.isAuth = true;
+        state.isAuth = false;
       })
       .addCase(getUser.fulfilled, (state, action) => {
         state.error = null;
@@ -90,7 +99,10 @@ export const userSlice = createSlice({
       })
       .addCase(getUser.rejected, (state, action) => {
         state.error = action.error.message;
-        state.user = null;
+        state.user = {
+          email: '',
+          name: ''
+        };
       })
       .addCase(updateUser.pending, (state) => {
         state.error = null;
@@ -98,6 +110,7 @@ export const userSlice = createSlice({
       })
       .addCase(updateUser.fulfilled, (state, action) => {
         state.error = null;
+        state.isAuth = true;
         state.user = action.payload.user;
       })
       .addCase(updateUser.rejected, (state, action) => {

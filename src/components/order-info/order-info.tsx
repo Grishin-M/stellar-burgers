@@ -5,8 +5,8 @@ import { TIngredient } from '@utils-types';
 import { useSelector, useDispatch } from '../../services/store';
 import { useParams } from 'react-router-dom';
 import { selectIngredients } from '../../services/slices/ingredientsSlice/ingredientsSlice';
-import { selectOrder } from '../../services/slices/feedslice/feedslice';
-import { getOrderByNumber } from '../../../src/services/slices/feedslice/async';
+import { selectOrder } from '../../services/slices/feedSlice/feedSlice';
+import { getOrderByNumber } from '../../services/slices/feedSlice/async';
 
 export const OrderInfo: FC = () => {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ export const OrderInfo: FC = () => {
 
   useEffect(() => {
     dispatch(getOrderByNumber(Number(number)));
-  }, [dispatch]); //
+  }, [dispatch]);
 
   const orderInfo = useMemo(() => {
     if (!orderData || !ingredients.length) return null;

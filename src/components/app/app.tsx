@@ -112,10 +112,7 @@ const App = () => {
           <Route
             path='/ingredients/:id'
             element={
-              <Modal
-                title='Детали ингредиентов'
-                onClose={() => navigate(bgLocation)}
-              >
+              <Modal title='Детали ингредиента' onClose={() => navigate(-1)}>
                 <IngredientDetails />
               </Modal>
             }

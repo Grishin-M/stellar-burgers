@@ -1,0 +1,13 @@
+{
+    "success": true,
+    "order": {
+        "_id": "6612bb4297ede0001d064aca",
+        "createdAt": "2024-04-07T15:26:58.017Z",
+        "ingredients": ["643d69a5c3f7b9001cfa093d", "643d69a5c3f7b9001cfa093e", "643d69a5c3f7b9001cfa093d"],
+        "name": "Флюоресцентный люминесцентный бургер",
+        "number": 37807,
+        "status": "done",
+        "updatedAt": "2024-04-07T15:26:58.506Z"
+    },
+    "name": ""
+  }

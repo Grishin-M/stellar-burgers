@@ -1,5 +1,6 @@
 describe('Test the App is working', () => {
   const mainPage = '/';
+  const CHOOSE_THE_FILLING = 'Выберите начинку';
 
   beforeEach(() => {
     cy.intercept('GET', 'api/ingredients', {
@@ -52,11 +53,11 @@ describe('Test the App is working', () => {
       const mains = cy.get('h3').contains('Начинки').next('ul');
       const addButton = mains.contains('Добавить');
 
-      cy.get('div').contains('Выберите начинку').should('exist');
+      cy.get('div').contains(CHOOSE_THE_FILLING).should('exist');
 
       addButton.click();
 
-      cy.get('div').contains('Выберите начинку').should('not.exist');
+      cy.get('div').contains(CHOOSE_THE_FILLING).should('not.exist');
     });
   });
 
@@ -83,7 +84,7 @@ describe('Test the App is working', () => {
 
       cy.contains('37807').should('not.exist');
       cy.contains('Выберите булки').should('exist');
-      cy.contains('Выберите начинку').should('exist');
+      cy.contains(CHOOSE_THE_FILLING).should('exist');
     });
   });
 

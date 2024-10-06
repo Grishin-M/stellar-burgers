@@ -1,4 +1,4 @@
-import { getFeedsApi, getOrderByNumberApi } from '../../../utils/burger-api';
+import { getFeedsApi, getOrderByNumberApi } from '@api';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const getFeeds = createAsyncThunk('feed/getFeeds', getFeedsApi);

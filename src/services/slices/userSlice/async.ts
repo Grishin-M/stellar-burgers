@@ -6,7 +6,7 @@ import {
   getUserApi,
   updateUserApi,
   getOrdersApi
-} from '../../../utils/burger-api';
+} from '@api';
 export const registerUser = createAsyncThunk(
   'user/registerUser',
   registerUserApi
